@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tap the Coin Game</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        #coin {
+            width: 100px;
+            height: 100px;
+            background-image: url('coin.png'); /* Replace with your coin image URL */
+            background-size: cover;
+            cursor: pointer;
+        }
+        #score {
+            position: absolute;
+            top: 20px;
+            font-size: 24px;
+        }
+        #url {
+            position: absolute;
+            bottom: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div id="score">Score: 0</div>
+    <div id="coin"></div>
+    <div id="url">URL: <a href="https://wchikm.com" target="_blank">https://wchikm.com</a></div> <!-- Replace with your URL -->
+
+    <script>
+        let score = 0;
+        const coin = document.getElementById('coin');
+        const scoreDisplay = document.getElementById('score');
+
+        coin.addEventListener('click', () => {
+            score++;
+            scoreDisplay.textContent = `Score: ${score}`;
+        });
+    </script>
+</body>
+</html>
